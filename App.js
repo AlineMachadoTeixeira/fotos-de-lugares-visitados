@@ -20,51 +20,51 @@ export default function App() {
   return (
     <>
       <StatusBar />
-      <View style={styles.container}>
+      <View style={estilos.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text style={styles.title}>Título da Foto/local</Text>
-          <View style={styles.imageContainer}>
+          <Text style={estilos.titulo}>Título da Foto/local</Text>
+          <View style={estilos.imagemContainer}>
             <Image
               source={require("./assets/senac.jpg")}
-              style={styles.image}
+              style={estilos.imagem}
             />
           </View>
 
-          <Button style={styles.button} title="Tirar  foto" />
+          <Button style={estilos.botao} title="Tirar  foto" color="#f3b453" />
         </ScrollView>
       </View>
     </>
   );
 }
 
-const styles = StyleSheet.create({
+const estilos = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     marginVertical: 25,
+    backgroundColor: "#ffe5c5",
   },
-  title: {
+  titulo: {
     fontSize: 20,
     fontWeight: "bold",
     marginVertical: 20,
     marginBottom: 20,
+    textAlign: "center",
+    color: "#4c3a20",
   },
-  imageContainer: {
+  imagemContainer: {
     alignItems: "center",
     marginBottom: 20,
   },
-  image: {
+  imagem: {
     width: 300,
     height: 250,
+    borderWidth: 5,
+    borderColor: "#f3b453",
   },
-  button: {
-    backgroundColor: "blue",
+  botao: {
     padding: 10,
     borderRadius: 5,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "bold",
   },
 });
