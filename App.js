@@ -159,6 +159,7 @@ export default function App() {
                   initialRegion={regiaoInicialMapa}
                   mapType="standard"
                   region={localizacao ?? regiaoInicialMapa}
+                  scrollEnabled={false} // Impede que o mapa role
                 >
                   {localizacao && <Marker coordinate={localizacao} />}
                 </MapView>
