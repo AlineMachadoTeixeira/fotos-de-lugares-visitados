@@ -15,6 +15,7 @@ import * as MediaLibrary from "expo-media-library";
 import * as Sharing from "expo-sharing";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
+import Galeria from "./src/screens/Galeria";
 
 export default function App() {
   /* #### COMEÇO FOTO */
@@ -172,6 +173,8 @@ export default function App() {
               />
             </>
           )}
+
+          {/* <Stack.Screen name="Galeria" component={Galeria} /> */}
         </ScrollView>
       </View>
     </>
@@ -250,4 +253,8 @@ const estilos = StyleSheet.create({
   //   padding: 10,
   //   borderRadius: 5,
   // },
+
+  viewGaleria: {
+    marginVertical: 50,
+  },
 });
