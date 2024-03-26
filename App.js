@@ -122,10 +122,11 @@ export default function App() {
           <TextInput
             style={estilos.campo}
             placeholder="Digite o Título da Foto/local"
-            placeholderTextColor="#2d3a58"
+            placeholderTextColor="#999999"
             axLength={40}
             autoFocus
             enterKeyHint="search"
+            textColor="#001a3a"
           />
 
           <View style={estilos.imagemContainer}>
@@ -148,27 +149,28 @@ export default function App() {
           />
 
           {/* LOCALIZAÇÃO */}
+          {/* O LOCALIZAÇÃO, só vai aparecer ser a "foto" for verdadeira/tirada. */}
 
-          <View style={estilos.imagemContainer}>
-            {/* <Image
-              source={require("./assets/senac.jpg")}
-              style={estilos.imagem}
-            /> */}
-            <MapView
-              style={estilos.mapa}
-              initialRegion={regiaoInicialMapa}
-              mapType="standard"
-              region={localizacao ?? regiaoInicialMapa}
-            >
-              {localizacao && <Marker coordinate={localizacao} />}
-            </MapView>
-          </View>
-          <Button
-            style={estilos.botao}
-            onPress={marcaLocal}
-            title="Localizar no mapa"
-            color="#f3b453"
-          />
+          {foto && (
+            <>
+              <View style={estilos.imagemContainer}>
+                <MapView
+                  style={estilos.mapa}
+                  initialRegion={regiaoInicialMapa}
+                  mapType="standard"
+                  region={localizacao ?? regiaoInicialMapa}
+                >
+                  {localizacao && <Marker coordinate={localizacao} />}
+                </MapView>
+              </View>
+              <Button
+                style={estilos.botao}
+                onPress={marcaLocal}
+                title="Localizar no mapa"
+                color="#f3b453"
+              />
+            </>
+          )}
         </ScrollView>
       </View>
     </>
@@ -239,7 +241,6 @@ const estilos = StyleSheet.create({
     borderColor: "#f3b453",
     alignItems: "center",
     fontSize: 20,
-    fontWeight: "bold",
     marginVertical: 20,
     marginBottom: 20,
     textAlign: "center",
