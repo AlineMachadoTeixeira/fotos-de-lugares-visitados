@@ -8,6 +8,7 @@ import {
   Text,
   Button,
   TextInput,
+  Pressable,
 } from "react-native";
 
 import * as ImagePicker from "expo-image-picker";
@@ -15,6 +16,7 @@ import * as MediaLibrary from "expo-media-library";
 import * as Sharing from "expo-sharing";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
+import { Ionicons } from "@expo/vector-icons";
 import Galeria from "./src/screens/Galeria";
 
 export default function App() {
@@ -171,6 +173,32 @@ export default function App() {
                 title="Localizar no mapa"
                 color="#f3b453"
               />
+
+              <View style={estilos.botaoExcluirSalvar}>
+                <Pressable
+                  //onPress={() => excluir(filme.id)}
+                  style={estilos.botaoExcluir}
+                >
+                  <Text style={estilos.textoSalvar}>
+                    <Ionicons
+                      AntDesign
+                      name="heart"
+                      size={16}
+                      color="#ffffff"
+                    />{" "}
+                    Salvar
+                  </Text>
+                </Pressable>
+
+                <Pressable
+                  //onPress={() => excluir(filme.id)}
+                  style={estilos.botaoExcluir}
+                >
+                  <Text style={estilos.textoExcluir}>
+                    <Ionicons name="trash" size={16} color="#e4541f" /> Excluir
+                  </Text>
+                </Pressable>
+              </View>
             </>
           )}
 
@@ -257,4 +285,33 @@ const estilos = StyleSheet.create({
   viewGaleria: {
     marginVertical: 50,
   },
+
+  botaoExcluirSalvar: {
+    alignItems: "center",
+    marginTop: 20,
+    marginBottom: 30,
+  },
+
+  botaoExcluir: {
+    backgroundColor: "#f3b453",
+    padding: 4,
+    borderRadius: 4,
+    marginBottom: 5,
+    alignItems: "center",
+    width: "80%",
+    padding: 10,
+  },
+
+  textoExcluir: {
+    fontWeight: "bold",
+    color: "#e4541f",
+  },
+  textoSalvar: {
+    fontWeight: "bold",
+    color: "#ffff",
+  },
+
+  // botaoFilme: {
+  //   felx: 1,
+  // },
 });
